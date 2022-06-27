@@ -1,0 +1,144 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html{
+    scroll-behavior: smooth;
+}
+body{
+    font-family: 'Roboto', sans-serif;
+}
+
+
+/*HEADER ↓*/
+.header-container{
+    display: flex;
+    justify-content: space-between;
+    background-color: #1c1c1c;
+    position: fixed;
+}
+.logo-container{
+    width: 50vw;
+}
+.logo-container img{
+    width: 7%;
+    height: 100%;
+}
+.site-nav{
+    width: 50vw;
+    align-self: center;
+}
+.main-menu{
+    display: flex;
+    list-style: none;
+    justify-content: right;
+}
+.main-menu li a{
+    text-decoration: none;
+    color: #ffffff;
+    padding-right: 1.5vw;
+    font-size: small  ;
+}
+
+
+
+/*MAIN*/
+/* ↓ */
+/*Section Top*/
+
+.section-top{
+    background-image: url("../images/index/top-background.png");
+}
+.text-move{
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    align-items: center;
+    color: #c17d2a;
+    height: 100vh;
+}
+.block-tittle-home big{
+    display: block;
+    text-align: center;
+    font-size: 11vw;
+}
+
+.section-wrapper{
+    height: 100vh;
+}
+
+
+/* section middle */
+
+.small-section-middle{
+    display: flex;
+
+}
+.block-container{
+    color: #ffffff;
+    padding: 0px 300px 0px 300px;    
+}
+.text-center{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+.first-background-left-index{
+    background-color: #011013; 
+}
+.block-tittle{
+    font-family: 'Noto Serif', serif;
+    font-weight: l;
+    font-size: 3vw;
+    padding-bottom: 3vh;
+}
+.text-block{
+    font-family: 'Titillium Web', sans-serif;
+    font-size: small;
+}
+.zo-experience{
+    font-family: 'Roboto Mono', monospace;
+    font-size: medium;
+    padding-top: 3vh;
+}
+.left{
+    width: 50vw;
+}
+
+.right{
+    width: 50vw;
+}
+.first-background-right-index{
+    background-image: url("../images/index/cocktail2.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+
+
+
+
+.second-background-left-index{
+    background-image: url(../images/index/sushi-1.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+
+
+
+.second-background-right-index{
+    background-image: url(../images/index/second-background.jpg);
+}
+
+#vermas{
+    text-decoration: none;
+    font-size: 1.2vw;
+    color: #ffffff;
+    font-family: 'Roboto Mono', monospace;
+    border-bottom: 1px solid;
+}
