@@ -24,13 +24,12 @@ const $form = document.querySelector('#form')
 const $buttonMailto = document.querySelector('#mail')
 
 
- $form.addEventListener('submit',handleSubmi)
+ $form.addEventListener('submit',handleSubmit)
 
 
- function handleSubmi(event){
+ function handleSubmit(event){
     event.preventDefault()
     const form = new FormData(this)
-    console.log(form.get('name'))
-    $buttonMailto.setAttribute('href',`mailto:kevinlopez1059@hotmail.com?subjet=nombre ${form.get('name')} correo ${form.get('email')} telefono ${form.get('phone')}&body=${form.get('message')}`)
+    $buttonMailto.setAttribute('href',`mailto:kevinlopez1059@hotmail.com?subjet=${form.get('name')}${form.get('email')}${form.get('phone')}&body=${form.get('message')}`)
     $buttonMailto.click()
 }
