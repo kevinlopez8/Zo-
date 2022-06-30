@@ -30,6 +30,10 @@ const $buttonMailto = document.querySelector('#mail')
  function handleSubmit(event){
     event.preventDefault()
     const form = new FormData(this)
+    console.log(form.get('name'))
+    console.log(form.get('email'))
+    console.log(form.get('phone'))
+    console.log(form.get('message'))
     $buttonMailto.setAttribute('href',`mailto:kevinlopez1059@hotmail.com?subjet=${form.get('name')}${form.get('email')}${form.get('phone')}&body=${form.get('message')}`)
     $buttonMailto.click()
 }
