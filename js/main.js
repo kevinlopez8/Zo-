@@ -37,3 +37,5 @@ const $buttonMailto = document.querySelector('#mail')
     $buttonMailto.setAttribute('href',`mailto:kevinlopez1059@hotmail.com?subjet=${form.get('name')}${form.get('email')}${form.get('phone')}&body=${form.get('message')}`)
     $buttonMailto.click()
 }
+
+
