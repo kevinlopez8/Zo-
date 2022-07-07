@@ -19,8 +19,18 @@ productContainer.append(div)
 })
 
 const agregarAlCarrito = (id) =>{
-    const item = stockProductos.find((prod)=> prod.id === id)
+    const item = stockProductos.find((producto)=> producto.id === id)
     carrito.push(item)
+
+    Toastyfy({
+        text: `Se agrego ${item.nombre} al carrito`,
+        duration: 3000,
+        gravity: 'botom',
+        position: 'right',
+        style:{
+            background: "linear-gradient(to right, #00b09b, #96c93d)"
+        }
+    }).showToast()
 
     renderCarrito()
 }
@@ -39,3 +49,4 @@ const renderCarrito = () =>{
         carritoContenedor.append(div) 
     })
 }
+
