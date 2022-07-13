@@ -10,6 +10,10 @@
     <link rel="stylesheet" href="../css/menu.css">
     <link rel="stylesheet" href="../node_modules/toastify-js/src/toastify.css">
     <title>Menu - Zo Nikkei</title>
+    <script defer src="../js/main.js"></script>
+    <script defer src="../js/stock.js"></script>
+    <script defer src="../js/apps.js"></script>
+    <script defer src="../js/carrito.js"></script>
 </head>
 <body>
     <header class="site-header">
@@ -47,7 +51,7 @@
             <h3>Newyork Phila</h3>
             <p class="product-description">Salmon, Queso y palta</p>
             <p class="productPrice">Precio: $1900</p>
-            <button class="boton-agregar">Agregar <i class="fa-light fa-cart-shopping"></i></button>
+            <button onclick="agregarAlCarrito(${producto.id})" class="boton-agregar">Agregar <i class="fas fa-shopping-cart"></i></button>
         </div> -->        
     </main>
     
@@ -68,10 +72,27 @@
             <button id="vaciarCarrito" class="boton-eliminar">Vaciar carrito</button>
         </div>
     </div>
-    <script src="../node_modules/toastify-js/src/toastify-es.js"></script>
-    <script src="../js/main.js"></script>
-    <script src="../js/stock.js"></script>
-    <script src="../js/apps.js"></script>
-    <script src="../js/carrito.js"></script>
+    <div class="modal-container">
+        <div class="modal modal-close">
+            <p class="close">X</p>
+            <div class="modal-textos">
+                <div>
+                    <h2>Get in touch</h2>
+                </div>
+                <form action="" id="form">
+                    <div class="input-container">
+                        <input type="text" placeholder="NOMBRE" id="contact-name" role="textbox" name="name" required >
+                        <input type="email" placeholder="E-MAIL"id="contact-email" role="textbox" name="email"  >
+                        <input type="tel" placeholder="TELEFONO" id="contact-number" role="textbox" name="phone" >
+                        <textarea placeholder="MENSAJE" id="contact-message" name="message" id="message" cols="30" rows="10" ></textarea>
+                        <button type="submit" class="btn bottom" >ENVIAR</button>
+                    </div>
+                </form>
+                <a href="mailto:kevinlopez1059@hotmail.com" id="mail">mail</a>
+            </div>
+        </div>
+    </div>
+    <script src="../node_modules/toastify-js/src/toastify.js"></script>
+    <script src="../node_modules/sweetalert/dist/sweetalert.min.js"></script>
 </body>
 </html>
