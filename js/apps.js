@@ -1,3 +1,4 @@
+
 const productContainer = document.querySelector('#product-container')
 const carritoContenedor =document.querySelector('#carrito-contenedor')
 
@@ -27,7 +28,7 @@ stockProductos.forEach((producto)=>{
 const agregarAlCarrito = (productId) =>{
     //const item = stockProductos.find((producto)=> producto.id === id)
     //carrito.push(item)
-    const itemInCart = carrito.find((producto)=> producto.id === productId)
+    const itemInCart = carrito.find((producto) => producto.id === productId)
 
     if (itemInCart){
         itemInCart.cantidad += 1
@@ -81,7 +82,7 @@ const removerDelCarrito = (id) => {
 
 const vaciarCarrito = () =>{
     carrito.lenght = 0
-    localStorage.setItem('carrito', JSON.stringify(carrito))
+    //localStorage.setItem('carrito', JSON.stringify(carrito))
 
     renderCarrito()
     renderCantidad()
@@ -115,20 +116,23 @@ btnVaciar.addEventListener('click', () => {
     })
 })
 
-const renderCarrito = () =>{
+
+const renderCarrito = () => {
+    carritoContenedor.innerHTML = ''
 
     carrito.forEach((item)=>{
-        const div = document.querySelector('div')
+        const div = document.createElement('div')
         div.classList.add('productoEnCarrito')
 
         div.innerHTML = `
                 <p>${item.nombre}</p>
                 <p>$${item.precio}</p>
-                <button class="boton-eliminar"><i class="fas fa-trash-alt"></i></button>
+                <button onclick="removerDelCarrito(${item.id})" class="boton-eliminar"><i class="fas fa-trash-alt"></i></button>
             `
         carritoContenedor.append(div) 
     })
 }
+
 
 const renderCantidad = () =>{
     contadorCarrito.innerText = carrito.reduce((acc, prod) => acc + prod.cantidad, 0 )
@@ -158,6 +162,8 @@ const showMensaje = (nombre) => {
     }).showToast()
 }
 
+
 renderCarrito()
 renderCantidad()
 renderTotal()
+
