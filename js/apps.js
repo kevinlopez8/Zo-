@@ -82,7 +82,7 @@ const removerDelCarrito = (id) => {
 
 const vaciarCarrito = () =>{
     carrito.lenght = 0
-    //localStorage.setItem('carrito', JSON.stringify(carrito))
+    localStorage.setItem('carrito', JSON.stringify(carrito))
 
     renderCarrito()
     renderCantidad()
