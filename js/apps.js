@@ -25,33 +25,35 @@ stockProductos.forEach((producto)=>{
 
 
 
-const agregarAlCarrito = (productId) =>{
-    //const item = stockProductos.find((producto)=> producto.id === id)
-    //carrito.push(item)
+const agregarAlCarrito = (productId) => {
+    // const item = stockProductos.find( (producto) => producto.id === productId)
+    // const {id, nombre, precio} = item
     const itemInCart = carrito.find((producto) => producto.id === productId)
 
-    if (itemInCart){
+    if (itemInCart) {
         itemInCart.cantidad += 1
         showMensaje(itemInCart.nombre)
-    }else{
+    } else {
         const {id, nombre, precio} = stockProductos.find( (producto) => producto.id === productId)
-
+    
         const itemToCart = {
-            id,
-            nombre,
-            precio,
-            cantidad: 1 
+            id, 
+            nombre, 
+            precio, 
+            cantidad: 1
         }
         carrito.push(itemToCart)
         showMensaje(nombre)
     }
 
     localStorage.setItem('carrito', JSON.stringify(carrito))
+
     renderCarrito()
     renderCantidad()
     renderTotal()
 }
 
+/*---------------------------------------------------Remover del carrito-----------------------------------------------------------------*/
 
 const removerDelCarrito = (id) => {
     const item = carrito.find((producto) => producto.id === id)
@@ -126,6 +128,7 @@ const renderCarrito = () => {
 
         div.innerHTML = `
                 <p>${item.nombre}</p>
+                <p>Cantidad:${item.cantidad}</p>
                 <p>$${item.precio}</p>
                 <button onclick="removerDelCarrito(${item.id})" class="boton-eliminar"><i class="fas fa-trash-alt"></i></button>
             `
@@ -134,7 +137,7 @@ const renderCarrito = () => {
 }
 
 
-const renderCantidad = () =>{
+const renderCantidad = () => {
     contadorCarrito.innerText = carrito.reduce((acc, prod) => acc + prod.cantidad, 0 )
 }
 

@@ -224,12 +224,14 @@ body{
     left: 40%;
     cursor: pointer;
     color: #7f8080;
-    background-color: rgba(255,255,255,0);
+    background-color: rgba(0,0,0,0);
+    border-bottom: 0px;
     border-radius: 30px;
 }
 .bottom:hover{
     color: #ffffff;
-    transition: color .5s;
+    background-color: rgba(210,210,210,.2);
+    transition: color .5s, background-color .5s;
 }
 
 .modal-container{
